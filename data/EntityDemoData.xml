@@ -1,0 +1,3 @@
+<entity-facade-xml>
+    <MoquiTraining trainingId="T001" trainingName="Moqui Basics" trainingDate="2025-01-10" trainingPrice="199.99" trainingDuration="4" />
+</entity-facade-xml>

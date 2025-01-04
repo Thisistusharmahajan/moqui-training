@@ -1,0 +1,11 @@
+{
+  "MoquiTraining": [
+    {
+      "trainingId": "T002",
+      "trainingName": "Advanced Moqui",
+      "trainingDate": "2025-01-12",
+      "trainingPrice": 299.99,
+      "trainingDuration": 6
+    }
+  ]
+}
