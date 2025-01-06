@@ -13,9 +13,7 @@
             <entity-find entity-name="moqui.training.MoquiTraining" list="trainingList" >
                 <econdition field-name="trainingName" required="true" />
                 <econdition field-name="trainingId" required="true" />
-                <select-field field-name="trainingId" />
-                <select-field field-name="trainingName"/>
-                <select-field field-name="trainingDate"/>
+                <select-field field-name="trainingId, trainingName, trainingDate" />
             </entity-find>
     </actions>
     </service>
