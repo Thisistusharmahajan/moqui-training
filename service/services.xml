@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
-    <service type="entity-auto" verb="create" noun="MoquiTraining">
+    <service type="entity-auto" verb="create" noun="MoquiTraining" location="component://moqui-training/script/MoquiTrainingScript.groovy">
         <in-parameters>
             <!-- Automatically map all fields from the MoquiTraining entity except the primary key -->
             <auto-parameters entity-name="MoquiTraining" include="nonpk"/>
             <!-- Explicitly define additional parameters with constraints -->
-            <parameter name="trainingName" required="true"/>
+            <parameter name="trainingName" required="true" />
             <parameter name="trainingDate" required="true" type="Date"  />
             <!--        <matches regex="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\d{4}$" message="Date must be in MM/DD/YYYY format"/>-->
-
         </in-parameters>
         <out-parameters>
             <!-- Output the primary key of the created entity -->
