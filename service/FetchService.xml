@@ -21,7 +21,7 @@
     </service>
 
 
-    <!--    Service to create or update a record in our entity-->
+    <!--    Service to create or update a record in our Entity-->
     <service verb="createUpdate" noun="MoquiTraining">
         <in-parameters>
             <parameter name="trainingId" />
