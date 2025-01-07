@@ -6,24 +6,16 @@
             <auto-parameters entity-name="MoquiTraining" include="nonpk"/>
             <!-- Explicitly define additional parameters with constraints -->
             <parameter name="trainingName" required="true" />
-            <screen name="MyDateEntityEdit">
-                <section>
-                    <fields>
-                        <field name="trainingDate" title="My Date" type="date" format="MM-dd-yyyy"/>
-                    </fields>
-                </section>
-            </screen>
-<!--            <parameter name="trainingDate" required="true" type="Date"  />-->
+            <parameter name="trainingDate" required="true"  />
             <!--        <matches regex="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\d{4}$" message="Date must be in MM/DD/YYYY format"/>-->
         </in-parameters>
         <out-parameters>
             <!-- Output the primary key of the created entity -->
             <parameter name="trainingId"/>
         </out-parameters>
-        <actions>
-            <!-- Call an entity-auto service to create the MoquiTraining record -->
-            <service-call name="create#MoquiTraining" in-map="context" out-map="context"/>
-        </actions>
+        <validate>
+            <field-name name="trainingDate" format="mm/dd/yyyy" />
+        </validate>
     </service>
 
 </services>
