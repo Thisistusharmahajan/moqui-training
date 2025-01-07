@@ -31,18 +31,18 @@
                 <econdition field-name="trainingName" ignore-case="true" />
             </entity-find>
             <if condition="trainingList" >
-<!--                if record alredy exists, update with a new value-->
+                <!--                if record alredy exists, update with a new value-->
                 <then>
                     <set field="tempField" from="trainingList.first" />
                     <entity-set value-field="tempField" map="context" />
                     <entity-update value-field="tempField"/>
                     <set field="trainingId" from="tempField.trainingId" />
                 </then>
+                <else>
+                    <!--                create a new record-->
+                    <service-call name="services.create#MoquiTraining" in-map="context" out-map="context" />
+                </else>
             </if>
-            <!--                create a new record-->
-            <else>
-                <service-call name="create#moquiTraining" in-map="context" out-map="context" />
-            </else>
         </actions>
     </service>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
-    <service type="entity-auto" verb="create" noun="MoquiTraining" location="component://moqui-training/script/MoquiTrainingScript.groovy">
+    <service type="entity-auto" verb="create" noun="MoquiTraining" >
         <in-parameters>
             <!-- Automatically map all fields from the MoquiTraining entity except the primary key -->
             <auto-parameters entity-name="MoquiTraining" include="nonpk"/>
