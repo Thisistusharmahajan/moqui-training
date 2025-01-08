@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service type="entity-auto" verb="create" noun="OrderItem" >
+        <in-parameters>
+            <!-- Automatically map all fields from the MoquiTraining entity except the primary key -->
+            <auto-parameters entity-name="OrderItem" include="all"/>
+          </in-parameters>
+        <out-parameters>
+            <!-- Output the primary key of the created entity -->
+            <parameter name="orderItemSequenceId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OrderItem">
+        <in-parameters>
+            <parameter name="orderItemSequenceId" entity-name="moqui.training.OrderItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="orderItemList" required="true"/>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="moqui.training.OrderItem" list="orderItemList" >
+                <econdition field-name="orderItemSequenceId" />
+            </entity-find>
+        </actions>
+    </service>
+</services>

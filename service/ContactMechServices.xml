@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service type="entity-auto" verb="create" noun="ContactMech" >
+        <in-parameters>
+            <!-- Automatically map all fields from the MoquiTraining entity except the primary key -->
+            <auto-parameters entity-name="ContactMech" include="all"/>
+          </in-parameters>
+        <out-parameters>
+            <!-- Output the primary key of the created entity -->
+            <parameter name="contactMechId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="ContactMech">
+        <in-parameters>
+            <parameter name="contactMechId" entity-name="moqui.training.ContactMech"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="contactMechList" required="true"/>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="moqui.training.ContactMech" list="contactMechList" >
+                <econdition field-name="contactMechId" />
+            </entity-find>
+        </actions>
+    </service>
+</services>

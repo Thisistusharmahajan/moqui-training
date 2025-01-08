@@ -8,4 +8,65 @@
         <field name="trainingPrice" type="currency-amount" />
         <field name="trainingDuration" type="number-integer" />
     </entity>
+    <entity entity-name="Party" package="moqui.training" table-name="moqui_training_Party">
+        <field name="partyId" type="text-short" is-pk="true"/>
+        <field name="partyType" type="text-medium" not-null="true"/>
+        <field name="firstName" type="text-medium" />
+        <field name="lastName" type="text-medium" />
+    </entity>
+    <entity entity-name="ContactMech" package="moqui.training" table-name="moqui_training_Contact_Mech">
+        <field name="contactMechId" type="text-short" is-pk="true" />
+        <field name="partyId" type="text-short" />
+<!--        the above field is yet to be declared as foreign key-->
+        <field name="streetAddress" type="text-medium" not-null="true"/>
+        <field name="city" type="text-medium" />
+        <field name="postalCode" type="text-medium" />
+        <relationship type="one" related="Party">
+            <key-map field-name="partyId" related="partyId"/>
+        </relationship>
+
+    </entity>
+    <entity entity-name="Product" package="moqui.training" table-name="moqui_training_Product">
+        <field name="productId" type="text-short" is-pk="true"/>
+        <field name="productName" type="text-medium" not-null="true" />
+        <field name="color" type="text-medium" />
+        <field name="size" type="text-short" />
+    </entity>
+    <entity entity-name="OrderHeader" package="moqui.training" table-name="moqui_training_Order_Header">
+        <field name="orderId" type="text-short" is-pk="true" />
+        <field name="orderDate" type="date" not-null="true" />
+        <field name="partyId" type="text-short" />
+<!--        the above field is yet to be declared as foreign key-->
+        <field name="shippingContactMechId" type="text-short" />
+<!--        the above field is yet to declared as foreign key-->
+        <field name="billingContactMechId" type="text-short" />
+<!--        the above field is yet to be declared as foreign key-->
+        <relationship type="one" related="Party">
+            <key-map field-name="partyId" related="partyId" />
+        </relationship>
+<!--        here partyId is declared as foreign key refering to partyId of Party Entity-->
+        <relationship type="one" related="ContactMech">
+            <key-map field-name="shippingContactMechId" related="contactMechId" />
+        </relationship>
+<!--        here shippingContactMechId is declared as foreign key refering to contactMechId of Contact_Mech Entity-->
+        <relationship type="one" related="ContactMech">
+            <key-map field-name="billingContactMechId" related="contactMechId" />
+        </relationship>
+<!--        here billingContactMechId is declared as foreign key refering to contactMechId of Contact_Mech Entity-->
+    </entity>
+    <entity entity-name="OrderItem" package="moqui.training" table-name="moqui_training_Order_Item">
+        <field name="orderItemSequenceId" type="text-short" is-pk="true" />
+        <field name="orderId" type="text-short" />
+<!--        the above field is yet to be declared as foreign key-->
+        <field name="productId" type="text-short" />
+<!--        the above field is yet to be declared as foreign key-->
+        <field name="quantity" type="number-integer" not-null="true" />
+        <field name="status" type="text-medium" />
+        <relationship type="one" related="OrderHeader">
+            <key-map field-name="orderId" related="orderId" />
+        </relationship>
+        <relationship type="one" related="Product">
+            <key-map field-name="productId" related="productId" />
+        </relationship>
+    </entity>
 </entities>

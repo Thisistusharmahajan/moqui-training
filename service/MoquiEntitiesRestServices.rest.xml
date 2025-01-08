@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
+          name="MoquiEntities" displayName="Moqui Tools REST API" version="${moqui_version}"
+          description="Services for various system administration and other tools in Moqui Framework. See more information
+            about Moqui Framework at [http://www.moqui.org/framework](http://www.moqui.org/framework/index.html)" >
+    <resource name="parties" require-authentication="anonymous-all">
+        <method type="post"><service name="PartyServices.create#Party" /></method>
+        <id name="partyId">
+            <method type="get"><entity name="Party" operation="list" /></method>
+            <method type="put"><entity name="Party" operation="store"/></method>
+            <method type="delete"><entity name="Party" operation="delete" /></method>
+            <resource name="contacts" require-authentication="anonymous-all">
+                <method type="post"><service name="ContactMechServices.create#ContactMech" /></method>
+                <method type="get"><entity name="ContactMech" operation="list" /></method>
+                <id name="contactMechId">
+                    <method type="put"><entity name="ContactMech" operation="store"/></method>
+                    <method type="delete"><entity name="ContactMech" operation="delete" /></method>
+                </id>
+            </resource>
+        </id>
+        <!--        <method type="get"><entity name="Party" operation="list" /></method>-->
+    </resource>
+    <resource name="products" require-authentication="anonymous-all">
+        <method type="post"><service name="ProductServices.create#Product" /></method>
+        <id name="productId">
+            <method type="get"><entity name="Product" operation="list" /></method>
+            <method type="put"><entity name="Product" operation="store"/></method>
+            <method type="delete"><entity name="Product" operation="delete" /></method>
+        </id>
+    </resource>
+    <resource name="contacts" require-authentication="anonymous-all">
+        <method type="post"><service name="ContactMechServices.create#ContactMech" /></method>
+        <id name="contactMechId">
+            <method type="get"><entity name="ContactMech" operation="list" /></method>
+            <method type="put"><entity name="ContactMech" operation="store"/></method>
+            <method type="delete"><entity name="ContactMech" operation="delete" /></method>
+        </id>
+    </resource>
+    <resource name="orders" require-authentication="anonymous-all">
+        <method type="post"><service name="OrderHeaderServices.create#OrderHeader" /></method>
+        <id name="orderId">
+            <method type="get"><entity name="OrderHeader" operation="list" /></method>
+            <method type="put"><entity name="OrderHeader" operation="store"/></method>
+            <method type="delete"><entity name="OrderHeader" operation="delete" /></method>
+            <resource name="items" require-authentication="anonymous-all">
+                <method type="post"><service name="OrderItemServices.create#OrderItem" /></method>
+            </resource>
+        </id>
+    </resource>
+    <resource name="items" require-authentication="anonymous-all">
+        <method type="post"><service name="OrderItemServices.create#OrderItem" /></method>
+        <id name="orderItemSequenceId">
+            <method type="get"><entity name="OrderItem" operation="list" /></method>
+            <method type="put"><entity name="OrderItem" operation="store"/></method>
+            <method type="delete"><entity name="OrderItem" operation="delete" /></method>
+        </id>
+    </resource>
+</resource>
+
