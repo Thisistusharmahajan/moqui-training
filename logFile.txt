@@ -1,0 +1,72 @@
+commit 91d8e02320e75dfbb358bd0eb1a62accd2123093
+Merge: 27a3251 82f0cf2
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Wed Jan 8 23:44:48 2025 +0530
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 27a3251869ab0e2f714f89f95d290b6e8235879d
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Wed Jan 8 23:41:38 2025 +0530
+
+    The task of Rest API develpment and testing has been done
+
+commit 82f0cf21ee4ee9336b435348c5e361894c71027a
+Author: Thisistusharmahajan <96428951+Thisistusharmahajan@users.noreply.github.com>
+Date:   Tue Jan 7 17:43:06 2025 +0530
+
+    Delete script/MoquiTrainingScript.groovy
+
+commit 3a846c37c5903f224bb166ddfcfe5c298e4faf69
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Tue Jan 7 15:10:28 2025 +0530
+
+    Fixed service/services.xml and service/Fetchservice.xml the problem of service call was solved
+
+commit e37cc4b2ad426e463fb54ead6629fb00f8577016
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Tue Jan 7 12:53:50 2025 +0530
+
+    4th asgmt Task 2 completed
+
+commit 548bd1d815562baefe95224778a025bd7b3c9419
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Mon Jan 6 18:12:10 2025 +0530
+
+    Asgmt 4th completed but there is an issue left in the createUpdate service
+
+commit f338878b26253a767f8be69e8a88a9fe5950c279
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Mon Jan 6 16:17:25 2025 +0530
+
+    Asgmt 4th completed but there is an issue left in createUpdate service
+
+commit fa9404f3b7164c4fee47f4bbf8565d8e0354f062
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Mon Jan 6 16:12:13 2025 +0530
+
+    asgmt 4th completed but there is an isseu still left
+
+commit 304ec7c2607e814d35ceffe4d4252235d95d2c0b
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Sat Jan 4 19:09:08 2025 +0530
+
+    until this point the input date format is yet to be fixed
+
+commit dd5a34590d6b27f390e132faf79a44969dc4f0ca
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Sat Jan 4 18:11:39 2025 +0530
+
+    until this point the input date format is yet to be fixed
+
+commit 7f44566a15b5ae032e367c1472396fd76a3ff5d2
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Sat Jan 4 12:11:33 2025 +0530
+
+    successfuly added moqui_training data into database using moqui
+
+commit 5e290421ceff7d381192dfd632c2e7008276228a
+Author: Thisistusharmahajan <tmahajan141@gmail.com>
+Date:   Fri Jan 3 18:16:32 2025 +0530
+
+    Added MoquiTraining Entity
